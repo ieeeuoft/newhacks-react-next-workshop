@@ -21,7 +21,7 @@ export default function App() {
       headers: {
         accept: 'application/json',
         'content-type': 'application/json',
-        authorization: 'Bearer 1lKjIkzPneTDcPCMyYf0d2ehJvfGAKbqgj3x96Ed' // This is your trial API key
+        authorization: process.env.NEXT_PUBLIC_API_KEY // This is your trial API key
       },
       body: JSON.stringify({
           message: userMessage,
