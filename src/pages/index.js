@@ -28,7 +28,7 @@ export default function App() {
 
   useEffect(() => {
     const chatContainer = document.getElementById('chat-container');
-    chatContainer.scrollTop = chatContainer.scrollHeight;
+    chatContainer.scrollTop = chatContainer.scrollHeight; // bruh scroll to bottom lets go
   }, [messages]);
 
   return (
