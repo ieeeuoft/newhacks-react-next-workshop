@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 400px;
+  /* max-width: 400px; */
   margin: 0 auto;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -17,8 +17,9 @@
 }
 .chat-messages {
   padding: 20px;
-  overflow-y: auto;
+  /* overflow-y: auto; */
   flex: 1;
+  min-height: 100vh;
   max-height: calc(70vh - 80px); 
 }
 
