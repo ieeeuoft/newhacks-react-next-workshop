@@ -16,7 +16,6 @@ export default function App() {
     //   const botResponse = `Bot response to: ${userMessage}`;
     //   addMessage('bot', botResponse);
     // }, 100);
-    console.log("user message: " + userMessage)
     const options = {
       method: 'POST',
       headers: {
@@ -69,6 +68,7 @@ export default function App() {
   }, [messages]);
 
   return (
+  <>
     <div className="chat-container" id="chat-container">
       {messages.map((message, index) => (
         <div
@@ -78,7 +78,8 @@ export default function App() {
           {message.message}
         </div>
       ))}
-      <div className="input-container">
+    </div>
+    <div className="input-container">
         <input
           type="text"
           value={inputText}
@@ -93,6 +94,6 @@ export default function App() {
         />
         <button onClick={handleUserInput} disabled={disableInput} >Send</button>
       </div>
-    </div>
+  </>
   );
 }

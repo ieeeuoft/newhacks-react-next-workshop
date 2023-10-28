@@ -11,7 +11,7 @@
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   background-color: #f7f7f7;
   overflow-y: auto;
-  height: 100vh;
+  height: 90vh;
   position: relative; 
 
 }
@@ -52,10 +52,12 @@
   background-color: #fff;
   padding: 10px 20px;
   border-top: 1px solid #ccc;
+  width: 100%;
 }
 
 input {
   flex: 1;
+  width: 90%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -70,8 +72,10 @@ button {
   border-radius: 5px;
   padding: 10px 15px;
   cursor: pointer;
+  width: 100px;
   transition: background-color 0.3s;
 }
+
 
 button:hover {
   background-color: #0056b3;
