@@ -4,13 +4,14 @@ import React, { useState, useEffect } from 'react';
 export default function App() {
   const [messages, setMessages] = useState([]);
   const [inputText, setInputText] = useState('');
-
+  const [disableInput , setDisableInput] = useState(false);
   const addMessage = (role, message) => {
     const newMessage = { role, message };
     setMessages((prevMessages) => [...prevMessages, newMessage]);
   };
 
   const simulateBotResponse = async (userMessage) => {
+    setDisableInput(true);
     // setTimeout(() => {
     //   const botResponse = `Bot response to: ${userMessage}`;
     //   addMessage('bot', botResponse);
@@ -21,7 +22,7 @@ export default function App() {
       headers: {
         accept: 'application/json',
         'content-type': 'application/json',
-        authorization: 'Bearer 1lKjIkzPneTDcPCMyYf0d2ehJvfGAKbqgj3x96Ed' // This is your trial API key
+        authorization: 'Bearer XIc2m2FAHoJ1hI3DlSXplFKynsD3NJsBM7hJKp23' // This is your trial API key
       },
       body: JSON.stringify({
           message: userMessage,
@@ -46,14 +47,14 @@ export default function App() {
         console.error(err)
       }
 
-
+      setDisableInput(false);
     }
 
 
     
 
 
-  const handleUserInput = async () => {
+    const handleUserInput = async () => {
     const userMessage = inputText.trim();
     if (userMessage) {
       addMessage('user', userMessage);
@@ -82,14 +83,15 @@ export default function App() {
           type="text"
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
-          placeholder="Type a message..."
+          placeholder= { disableInput ? "Loading bot response.." : "Type a message..."} 
           onKeyPress={(e) => {
             if (e.key === 'Enter') {
               handleUserInput();
             }
           }}
+          disabled={disableInput}
         />
-        <button onClick={handleUserInput}>Send</button>
+        <button onClick={handleUserInput} disabled={disableInput} >Send</button>
       </div>
     </div>
   );
