@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
-
-export default function App() {
+export default function Ref() {
   const [messages, setMessages] = useState([]);
   const [inputText, setInputText] = useState('');
+  const chatContainerRef = useRef();
 
   const addMessage = (from, msg) => {
     const newMessage = { from, msg };
@@ -27,21 +27,22 @@ export default function App() {
   };
 
   useEffect(() => {
-    const chatContainer = document.getElementById('chat-container');
-    chatContainer.scrollTop = chatContainer.scrollHeight;
+    chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
   }, [messages]);
 
   return (
-    <div className="chat-container" id="chat-container">
-      {messages.map((message, index) => (
-        <div
-          key={index}
-          className={`chat-bubble ${message.from === 'user' ? 'user' : 'bot'}`}
-        >
-          {message.msg}
-        </div>
-      ))}
-      <div className="input-container">
+    <div className="chat-container">
+      <div className="chat-messages" ref={chatContainerRef}>
+        {messages.map((message, index) => (
+          <div
+            key={index}
+            className={`chat-bubble ${message.from === 'user' ? 'user' : 'bot'}`}
+          >
+            {message.msg}
+          </div>
+        ))}
+      </div>
+      <div className="chat-input">
         <input
           type="text"
           value={inputText}
