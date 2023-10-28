@@ -25,8 +25,7 @@ export default function App() {
       },
       body: JSON.stringify({
           message: userMessage,
-          model: 'command',
-          stream: true,
+          model: 'command-light',
           chat_history: messages,
           prompt_truncation: 'auto',
           connectors: [{"id":"web-search"}],
@@ -36,10 +35,20 @@ export default function App() {
         })
       }
       console.log(options.body)
+      try{
       const res = await fetch('https://api.cohere.ai/v1/chat', options)
-      const content = await res.json()
-      console.log(content)
+      let content = await res.json()
+      
+      console.log(content.text)
+      addMessage ('Chatbot', content.text);
+
+      } catch (err) {
+        console.error(err)
+      }
+
+
     }
+
 
     
 
