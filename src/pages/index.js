@@ -32,29 +32,31 @@ export default function App() {
   }, [messages]);
 
   return (
-    <div className="chat-container" id="chat-container">
-      {messages.map((message, index) => (
-        <div
-          key={index}
-          className={`chat-bubble ${message.from === 'user' ? 'user' : 'bot'}`}
-        >
-          {message.msg}
-        </div>
-      ))}
-      <div className="input-container">
-        <input
-          type="text"
-          value={inputText}
-          onChange={(e) => setInputText(e.target.value)}
-          placeholder="Type a message..."
-          onKeyPress={(e) => {
-            if (e.key === 'Enter') {
-              handleUserInput();
-            }
-          }}
-        />
-        <button onClick={handleUserInput}>Send</button>
+    <>
+      <div className="chat-container" id="chat-container">
+        {messages.map((message, index) => (
+          <div
+            key={index}
+            className={`chat-bubble ${message.from === 'user' ? 'user' : 'bot'}`}
+          >
+            {message.msg}
+          </div>
+        ))}
       </div>
+      <div className="input-container">
+      <input
+        type="text"
+        value={inputText}
+        onChange={(e) => setInputText(e.target.value)}
+        placeholder="Type a message..."
+        onKeyPress={(e) => {
+          if (e.key === 'Enter') {
+            handleUserInput();
+          }
+        }}
+      />
+      <button onClick={handleUserInput}>Send</button>
     </div>
+    </>
   );
 }
