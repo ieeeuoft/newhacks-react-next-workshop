@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 
 
@@ -5,6 +6,8 @@ export default function App() {
   const [messages, setMessages] = useState([]);
   const [inputText, setInputText] = useState('');
   const [disableInput , setDisableInput] = useState(false);
+  const [dark , setDark] = useState(false);
+  
   const addMessage = (role, message) => {
     const newMessage = { role, message };
     setMessages((prevMessages) => [...prevMessages, newMessage]);
@@ -69,7 +72,8 @@ export default function App() {
 
   return (
   <>
-    <div className="chat-container" id="chat-container">
+    <div className={`header ${dark && 'dark'}`}><Link href={"/promo"}><img className='logo' src="/logo.jpg"/> </Link> <button onClick={()=>setDark(!dark)}> {dark ? "enable light" : "enable dark"} </button></div>
+    <div className= {dark ? "chat-container dark" : "chat-container"} id="chat-container">
       {messages.map((message, index) => (
         <div
           key={index}
@@ -79,7 +83,7 @@ export default function App() {
         </div>
       ))}
     </div>
-    <div className="input-container">
+    <div  className= { `input-container ${ dark && 'dark'}`}>
         <input
           type="text"
           value={inputText}
