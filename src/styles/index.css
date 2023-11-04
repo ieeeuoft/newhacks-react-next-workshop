@@ -82,7 +82,7 @@ button:hover {
   background-color: #0056b3;
 }
 
-.header {
+.navbar {
   position: sticky;
   top: 0;
   display: flex;
