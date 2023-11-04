@@ -31,3 +31,13 @@ To learn more about Next.js, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+##Getting the cohere api
+
+- Make a cohere account [here](https://dashboard.cohere.com/welcome/register?__hsfp=3429389801&__hssc=14363112.1.1699110025270&__hstc=14363112.dfe58581202824c116fccf99337a475b.1699110025270.1699110025270.1699110025270.1)
+- Then go to the [API section](https://dashboard.cohere.com/api-keys) and get your TRIAL API KEY.
+<img width="1440" alt="image" src="https://github.com/ieeeuoft/newhacks-react-next-workshop/assets/65177870/4852e562-3f5d-4c27-b033-26e7b5d596c0">
+
+
+
+
