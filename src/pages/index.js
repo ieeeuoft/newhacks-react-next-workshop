@@ -11,7 +11,9 @@ export default function App() {
 
   const addMessage = (role, message) => {
     const newMessage = { role, message };
-    setMessages((prevMessages) => [...prevMessages, newMessage]);
+
+    // TOOD: add the new messages to the messages state variable
+    
   };
   
   const simulateBotResponse = async (userMessage) => {
@@ -81,9 +83,7 @@ export default function App() {
         <button className="promo">Home</button>
       </Link>
       {/* TODO: Make the promo page */}
-      <Link href={"/promo"}>
-        <button className="promo">Promo</button>
-      </Link>
+      
     </div>
 
     {/* Chat */}
