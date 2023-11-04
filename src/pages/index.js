@@ -15,10 +15,6 @@ export default function App() {
 
   const simulateBotResponse = async (userMessage) => {
     setDisableInput(true);
-    // setTimeout(() => {
-    //   const botResponse = `Bot response to: ${userMessage}`;
-    //   addMessage('bot', botResponse);
-    // }, 100);
     const options = {
       method: 'POST',
       headers: {
@@ -52,10 +48,6 @@ export default function App() {
       setDisableInput(false);
     }
 
-
-    
-
-
     const handleUserInput = async () => {
     const userMessage = inputText.trim();
     if (userMessage) {
@@ -70,6 +62,15 @@ export default function App() {
     chatContainer.scrollTop = chatContainer.scrollHeight; // bruh scroll to bottom lets go
   }, [messages]);
 
+  
+
+  useEffect(() => {
+    const hi = async () => {
+      addMessage('user', 'hi')
+      await simulateBotResponse("hi")
+    }
+    hi()
+  }, [])
   return (
   <>
     <NavBar dark={dark} />

@@ -47,20 +47,22 @@
 
 .input-container {
   position: sticky;
+  display: flex;
+  justify-content: space-between;
   bottom: 0;
   background-color: #fff;
   padding: 10px 20px;
-  width: 100%;
+  border-top: 1px solid #ccc;
 }
 
 input {
   flex: 1;
-  width: calc(80vw - 60px);
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-right: 10px;
   margin-left: 10px;
+  width: 70vw;
 }
 
 
@@ -71,9 +73,10 @@ button {
   border-radius: 5px;
   padding: 10px 15px;
   cursor: pointer;
-  width: 9vw;
   transition: background-color 0.3s;
+  width: 10vw;
 }
+
 
 button:hover {
   background-color: #0056b3;
