@@ -87,7 +87,10 @@ export default function App() {
     </div>
 
     {/* Chat */}
-    <div className="chat-container" id="chat-container">
+    <div 
+      className="chat-container"
+      id="chat-container"
+    >
       {messages.map((message, index) => (
         <div
           key={index}
