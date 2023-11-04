@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
-
+import NavBar from './NavBar';
 
 export default function App() {
   const [messages, setMessages] = useState([]);
@@ -72,7 +72,7 @@ export default function App() {
 
   return (
   <>
-    <div className={`header ${dark && 'dark'}`}><Link href={"/promo"}><img className='logo' src="/logo.jpg"/> </Link> <button onClick={()=>setDark(!dark)}> {dark ? "enable light" : "enable dark"} </button></div>
+    <NavBar dark={dark} />
     <div className= {dark ? "chat-container dark" : "chat-container"} id="chat-container">
       {messages.map((message, index) => (
         <div
@@ -83,7 +83,8 @@ export default function App() {
         </div>
       ))}
     </div>
-    <div  className= { `input-container ${ dark && 'dark'}`}>
+    <div className= { `input-container ${ dark && 'dark'}`}>
+        <button onClick={()=>setDark(!dark)}> {dark ? "enable light" : "enable dark"}</button>
         <input
           type="text"
           value={inputText}
@@ -101,3 +102,4 @@ export default function App() {
   </>
   );
 }
+
