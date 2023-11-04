@@ -1,7 +1,5 @@
 This is a React.js + Next.js tutorial, made for NewHacks 2023 by Scott Hirano and Kovid Srivart, Tech Team of IEEE University of Toronto Student Branch.
 
-Please DO NOT use/copy without permission!
-
 ## Getting Started
 
 After pulling the project to your device, run the following command to install the required modules!
