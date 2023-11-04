@@ -66,7 +66,6 @@ export default function App() {
 
   useEffect(() => {
     const hi = async () => {
-      addMessage('user', 'hi')
       await simulateBotResponse("hi")
     }
     hi()
